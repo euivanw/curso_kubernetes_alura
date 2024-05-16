@@ -24,3 +24,9 @@ kubectl describe pod <nome-do-pod>
 ```bash
 kubectl edit pod <nome-do-pod>
 ```
+
+### Criar um Pod definido de maneira declarativa
+
+```bash
+kubectl apply -f <nome-do-arquivo.yml>
+```
