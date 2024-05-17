@@ -60,3 +60,13 @@ kubectl get services
 # lista os serviços com mais informações
 kubectl get services -o wide
 ```
+
+### Lista os Nodes
+
+```shell
+# lista os nodes
+kubectl get nodes
+
+# lista os nodes com mais informações
+kubectl get nodes -o wide
+```
