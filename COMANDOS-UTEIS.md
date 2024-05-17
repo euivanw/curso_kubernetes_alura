@@ -43,6 +43,9 @@ kubectl delete pod <nome-do-pod>
 
 # apaga via arquivo de declaração
 kubectl delete -f <nome-do-arquivo.yml>
+
+# apaga todos os pods de uma vez
+kubectl delete pods --all
 ```
 
 ### Entrar no shell de um Pod
@@ -79,4 +82,7 @@ kubectl delete service <nome-do-service>
 
 # apaga via arquivo de declaração
 kubectl delete -f <nome-do-arquivo.yml>
+
+# apaga todos os services de uma vez
+kubectl delete services --all
 ```
