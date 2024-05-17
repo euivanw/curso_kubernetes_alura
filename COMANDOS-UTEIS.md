@@ -86,3 +86,9 @@ kubectl delete -f <nome-do-arquivo.yml>
 # apaga todos os services de uma vez
 kubectl delete services --all
 ```
+
+### Lista os ConfigMaps
+
+```shell
+kubectl get configmap
+```
