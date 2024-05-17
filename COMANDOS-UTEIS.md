@@ -70,3 +70,13 @@ kubectl get nodes
 # lista os nodes com mais informações
 kubectl get nodes -o wide
 ```
+
+### Apagar um Service
+
+```shell
+# apaga manualmente
+kubectl delete service <nome-do-service>
+
+# apaga via arquivo de declaração
+kubectl delete -f <nome-do-arquivo.yml>
+```
