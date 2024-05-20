@@ -127,3 +127,42 @@ kubectl annotate deployment <nome-do-deployment> kubernetes.io/change-cause="<ca
 ```shell
 kubectl rollout undo deployment <nome-do-deployment> --to-revision=<numero-revisao>
 ```
+
+### Listar os StatefulSets
+
+```shell
+# lista 
+kubectl get pv
+
+# lista  com mais informações
+kubectl get statefulset -o wide
+
+# acompanha em tempo real
+kubectl get statefulset --watch
+```
+
+### Listar os Persistent Volume
+
+```shell
+# lista 
+kubectl get pv
+
+# lista  com mais informações
+kubectl get pv -o wide
+
+# acompanha em tempo real
+kubectl get pv --watch
+```
+
+### Listar os Persistent Volume Claim
+
+```shell
+# lista 
+kubectl get pvc
+
+# lista  com mais informações
+kubectl get pvc -o wide
+
+# acompanha em tempo real
+kubectl get pvc --watch
+```
