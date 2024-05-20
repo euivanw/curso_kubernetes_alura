@@ -19,17 +19,17 @@ spec:
             - configMapRef:
                 name: sistema-noticias-configmap
           volumeMounts:
-            - name: imagens
+            - name: sistema-noticias-imagens
               mountPath: /var/www/html/uploads
-            - name: sessao
+            - name: sistema-noticias-sessao
               mountPath: /tmp
       volumes:
-        - name: imagens
+        - name: sistema-noticias-imagens
           persistentVolumeClaim:
-            claimName: imagens-pvc
-        - name: sessao
+            claimName: sistema-noticias-imagens-pvc
+        - name: sistema-noticias-sessao
           persistentVolumeClaim:
-            claimName: sessao-pvc
+            claimName: sistema-noticias-sessao-pvc
   selector:
     matchLabels:
       app: sistema-noticias

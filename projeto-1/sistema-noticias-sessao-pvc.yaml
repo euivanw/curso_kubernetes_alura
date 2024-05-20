@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sessao-pvc
+  name: sistema-noticias-sessao-pvc
 spec:
   accessModes:
     - ReadWriteOnce
