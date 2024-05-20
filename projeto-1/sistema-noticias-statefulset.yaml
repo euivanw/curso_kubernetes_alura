@@ -23,6 +23,13 @@ spec:
               mountPath: /var/www/html/uploads
             - name: sistema-noticias-sessao
               mountPath: /tmp
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 3
+            initialDelaySeconds: 20
       volumes:
         - name: sistema-noticias-imagens
           persistentVolumeClaim:
