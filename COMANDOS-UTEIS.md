@@ -108,3 +108,22 @@ kubectl get rs -o wide
 # acompanha em tempo real
 kubectl get rs --watch
 ```
+
+### Consultar o histórico de mudanças de um deployment
+
+```shell
+kubectl rollout history deployment <nome-do-deployment>
+```
+
+### Aplicando um deployment e ajustando o motivo da mudança
+
+```shell
+kubectl apply -f <arquivo-do-deployment.yaml> --record
+kubectl annotate deployment <nome-do-deployment> kubernetes.io/change-cause="<causa-da-mudanca>"
+```
+
+### Alterando um deployment com base no histórico de mudanças
+
+```shell
+kubectl rollout undo deployment <nome-do-deployment> --to-revision=<numero-revisao>
+```
