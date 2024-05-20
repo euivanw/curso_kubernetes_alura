@@ -58,10 +58,13 @@ kubectl exec -it <nome-do-pod> -- shell
 
 ```shell
 # lista os serviços
-kubectl get services
+kubectl get svc
 
 # lista os serviços com mais informações
-kubectl get services -o wide
+kubectl get svc -o wide
+
+# acompanha em tempo real
+kubectl get svc --watch
 ```
 
 ### Lista os Nodes
@@ -78,17 +81,30 @@ kubectl get nodes -o wide
 
 ```shell
 # apaga manualmente
-kubectl delete service <nome-do-service>
+kubectl delete svc <nome-do-service>
 
 # apaga via arquivo de declaração
 kubectl delete -f <nome-do-arquivo.yml>
 
 # apaga todos os services de uma vez
-kubectl delete services --all
+kubectl delete svc --all
 ```
 
 ### Lista os ConfigMaps
 
 ```shell
 kubectl get configmap
+```
+
+### Listar os ReplicaSets
+
+```shell
+# lista os replica sets
+kubectl get rs
+
+# lista os replica sets com mais informações
+kubectl get rs -o wide
+
+# acompanha em tempo real
+kubectl get rs --watch
 ```
