@@ -18,4 +18,4 @@ spec:
     - name: primeiro-volume
       hostPath:
         path: /Users/euivanw/Developer/studies/kubernetes/kubernetes_alura/exemplo-4/volumes/primeiro-volume
-        type: Directory
+        type: DirectoryOrCreate
