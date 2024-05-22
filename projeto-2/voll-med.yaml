@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Development
+kind: Deployment
 metadata:
   name: vollmed
   labels:
@@ -9,12 +9,24 @@ spec:
   selector:
     matchLabels:
       app: vollmed
-  metadata:
-    labels:
-      app: vollmed
-  spec:
-    containers:
-      - name: vollmedAPI
-        image: leonardosartorello/vollmed:v8
-        ports:
-          - containerPort: 3000
+  template:
+    metadata:
+      labels:
+        app: vollmed
+    spec:
+      containers:
+        - name: vollmedAPI
+          image: leonardosartorello/vollmed:v8
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: DB_HOST
+                  name: dados
+            - name: DB_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  key: DB_DATABASE
+                  name: dados
