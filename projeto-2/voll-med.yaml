@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Development
+metadata:
+  name: vollmed
+  labels:
+    app: vollmed
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vollmed
+  metadata:
+    labels:
+      app: vollmed
+  spec:
+    containers:
+      - name: vollmedAPI
+        image: leonardosartorello/vollmed:v8
+        ports:
+          - containerPort: 3000
