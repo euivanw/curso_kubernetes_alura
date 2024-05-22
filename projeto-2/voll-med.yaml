@@ -30,3 +30,8 @@ spec:
                 configMapKeyRef:
                   key: DB_DATABASE
                   name: dados
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: DB_PASSWORD
+                  name: senhas
