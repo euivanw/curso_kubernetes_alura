@@ -15,7 +15,7 @@ spec:
         app: vollmed
     spec:
       containers:
-        - name: vollmedAPI
+        - name: vollmed-api
           image: leonardosartorello/vollmed:v8
           ports:
             - containerPort: 3000
