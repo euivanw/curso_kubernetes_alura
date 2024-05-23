@@ -33,14 +33,9 @@ spec:
                   name: senhas
                   key: DB_PASSWORD
           volumeMounts:
-            - name: mysql
-              mountPath: /usr/share/nginx/html
-  volumeClaimTemplates:
-    - metadata:
-        name: www
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        storageClassName: "my-storage-class"
-        resources:
-          requests:
-            storage: 1Gi
+            - name: mysql-ps
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-ps
+          persistentVolumeClaim:
+            claimName: volume-mysql
