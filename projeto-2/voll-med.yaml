@@ -23,15 +23,15 @@ spec:
             - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
-                  key: DB_HOST
                   name: dados
+                  key: DB_HOST
             - name: DB_DATABASE
               valueFrom:
                 configMapKeyRef:
-                  key: DB_DATABASE
                   name: dados
+                  key: DB_DATABASE
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: DB_PASSWORD
                   name: senhas
+                  key: DB_PASSWORD
