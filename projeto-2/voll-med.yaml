@@ -35,6 +35,11 @@ spec:
                 secretKeyRef:
                   name: senhas
                   key: DB_PASSWORD
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: dados
+                  key: REDIS_HOST
           livenessProbe:
             httpGet:
               path: /paciente

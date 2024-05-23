@@ -5,3 +5,4 @@ metadata:
 data:
   DB_HOST: "mysql-service"
   DB_DATABASE: "testemed"
+  REDIS_HOST: "redis-master.default.svc.cluster.local"
