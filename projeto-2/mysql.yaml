@@ -35,6 +35,12 @@ spec:
           volumeMounts:
             - name: mysql-ps
               mountPath: /var/lib/mysql
+          livenessProbe:
+            exec:
+              command: [ "mysqladmin", "-uroot", "-p$MYSQL_ROOT_PASSWORD", "ping" ]
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
       volumes:
         - name: mysql-ps
           persistentVolumeClaim:
