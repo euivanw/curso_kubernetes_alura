@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mysql-cronjob
+spec:
+  schedule: "0 3 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: mysql-backup
+              image: leonardosartorello/mysqldump:v4
+              env:
+                - name: MYSQL_ENV_DB_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: dados
+                      key: DB_HOST
+                - name: MYSQL_ENV_DB_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: senhas
+                      key: DB_USER
+                - name: MYSQL_ENV_DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: senhas
+                      key: DB_PASSWORD
+          restartPolicy: OnFailure
